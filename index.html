@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-a-Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Etch-a-Sketch</h1>
+    </header>
+    <div class="controls">
+      <div class="color-container">
+        <div class="color-value">#6c2acf</div>
+        <input
+          id="color-picker"
+          type="color"
+          value="#6c2acf"
+          class="color-picker"
+          oninput="changeColor(value)"
+        />
+        <label for="color-picker">Pick a color</label>
+      </div>
+      <button class="btn rainbow" onclick="rainbowMode()">rainbow</button>
+      <button class="btn eraser" onclick="eraserMode()">eraser</button>
+      <button class="btn reset" onclick="reset()">reset</button>
+      <div class="resize-container">
+        <div class="input-value">16</div>
+        <input
+          id="resize"
+          type="range"
+          min="2"
+          max="100"
+          step="1"
+          value="16"
+          oninput="renderInputValue(value)"
+          onchange="resizeGrid(value)"
+          class="resize-grid"
+        />
+        <label for="resize">Resize canvas</label>
+      </div>
+    </div>
+    <div class="grid-container"></div>
+    <footer>&copy; Copyright 2022 or something</footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
